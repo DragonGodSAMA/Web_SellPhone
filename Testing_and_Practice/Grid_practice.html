@@ -32,26 +32,39 @@
             min-width: 100px;
             color:white;
         }
-        #index{
-            margin-right: auto;
-            flex-grow: 0;
-            flex-shrink: 0;
-            border-right: 1px solid white;
-        }
         .header{
             grid-area: header;
             display:flex;
             justify-self: flex-end;
             height:100%;
             width:100%;
-
+        }
+        #HumburgerMenu{
+            flex-grow: 0;
+            flex-shrink: 0;
+            border-right: 1px solid rgba(255, 255, 255, 0.509);
+        }
+        #logo{
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+        .header::after {
+            content: "";
+            margin-left: auto;
+        }
+        .header_img {
+            width: 30px;
+            height: 30px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header" style="background-color: rgb(21, 39, 105); grid-area: header;">
-            <div class="box" id="index">QMPluss</div>
+            <div class="box" id="HumburgerMenu"><img src="../HamburgerMenu.png" alt="Menu " class="header_img"></div>
+            <div class="box" id="logo">QMPluss</div>
+            <div class="box"><img src="Search.png" alt="Search" class="header_img"></div>
+            <div class="box"><img src="Notes.png" alt="Notes" class="header_img"></div>
         </div>
         <div style="background-color: rgb(208, 0, 255); grid-area: sidebar;">Sidebar</div>
         <div style="background-color: rgb(255, 255, 255); grid-area: main;">Main Content</div>
