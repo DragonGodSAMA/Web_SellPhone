@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: rgb(227, 227, 227);
+        }
+        .basiccontainer {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .Header {
+            display: flex;
+            align-items: center;
+            height: 80px;
+            width: 100%;
+        }
+        .contentwrap {
+            display: flex;
+            flex-direction: column;
+            width: 92%;
+            margin: 24px auto 0;
+        }
+        .page {
+            width: 100%;
+            margin: 0 auto 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 18px 22px 28px;
+        }
+        .toprow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 26px;
+        }
+        .namebox {
+            min-width: 50px;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 14px;
+        }
+        .namebox img {
+            width: 44px;
+            height: 44px;
+        }
+        .backhome {
+            text-decoration: none;
+            color: white;
+            background: rgb(184, 122, 122);
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+        }
+        .backhome:hover {
+            background: rgb(234, 179, 179);
+        }
+        .mainbox {
+            padding: 18px 16px;
+        }
+        .buylayout {
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            gap: 26px;
+            align-items: stretch;
+        }
+        .imagebox {
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(250, 250, 250);
+            overflow: hidden;
+        }
+        .imagebox img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .rightcol {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .linebox {
+            border-radius: 5px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 12px;
+            font-size: 24px;
+            font-weight: 500;
+            background-color: rgb(245, 245, 245);
+            color: rgb(71, 71, 71);
+        }
+        .smallbox {
+            width: 48%;
+            max-width: 420px;
+            min-height: 50px;
+            font-size: 24px;
+        }
+        .bottomactions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .actionlinks {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .learnbtn {
+            text-decoration: none;
+            color: white;
+            background: rgb(184, 122, 122);
+            border-radius: 5px;
+            min-width: 140px;
+            padding: 10px 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .learnbtn:hover {
+            background: rgb(234, 179, 179);
+        }
+        .buybtn {
+            text-decoration: none;
+            color: white;
+            background: rgb(184, 122, 122);
+            border-radius: 5px;
+            min-width: 140px;
+            padding: 10px 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .buybtn:hover {
+            background: rgb(234, 179, 179);
+        }
+        .Footer {
+            width: 100%;
+            padding-bottom: 18px;
+        }
+        .footerServe {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .footerServe a {
+            display: inline-block;
+            margin: 20px 15px 0 15px;
+            font-size: 15px;
+            text-align: center;
+            color: rgb(99, 99, 99);
+            text-decoration: none;
+        }
+        .footerServe a:hover {
+            text-decoration: underline;
+        }
+        .footertext {
+            color: rgb(120, 120, 120);
+            text-align: center;
+            margin: 16px 0 0;
+            font-size: 13px;
+        }
+        @media (max-width: 1180px) {
+            .buylayout {
+                grid-template-columns: 330px 1fr;
+                gap: 18px;
+            }
+            .linebox,
+            .smallbox {
+                font-size: 20px;
+                min-height: 40px;
+            }
+            .buybtn {
+                font-size: 20px;
+                min-width: 120px;
+                padding: 8px 16px;
+            }
+            .learnbtn {
+                font-size: 16px;
+                min-width: 120px;
+                padding: 8px 16px;
+            }
+            .backhome {
+                min-width: 120px;
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            .namebox {
+                min-height: 52px;
+                min-width: 50px;
+            }
+        }
+        @media (max-width: 820px) {
+            .contentwrap {
+                width: 96%;
+                margin-top: 14px;
+            }
+            .page {
+                padding: 14px;
+            }
+            .toprow {
+                margin-bottom: 16px;
+            }
+            .namebox {
+                min-width: 44px;
+                min-height: 44px;
+                padding: 6px 8px;
+            }
+            .namebox img {
+                width: 34px;
+                height: 34px;
+            }
+            .backhome {
+                min-width: 100px;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            .buylayout {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .imagebox {
+                min-height: 300px;
+            }
+            .linebox,
+            .smallbox {
+                font-size: 16px;
+                min-height: 36px;
+            }
+            .smallbox {
+                width: 60%;
+                min-width: 180px;
+            }
+            .buybtn {
+                min-width: 100px;
+                padding: 8px 16px;
+                font-size: 16px;
+            }
+            .learnbtn {
+                min-width: 100px;
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            .footerServe a {
+                margin: 18px 10px 0 10px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="basiccontainer">
+        <div class="Header" >
+            <h2 style="color: rgb(71, 71, 71); margin: 20px 20px 0 50px; font-size: 24px;">DragonGod Phone</h2>
+            <div class=""></div>
+        </div>
+        <div class="contentwrap">
+            <div class="page">
+                <div class="toprow">
+                    <div class="namebox">
+                        <img src="Resources/logo_test.png" alt="logo">
+                    </div>
+                    <a class="backhome" href="HomePage.html">Back to Home</a>
+                </div>
+                <div class="mainbox">
+                    <main class="buylayout">
+                        <section class="imagebox">
+                            <img src="Resources/phone_test.png" alt="Product Picture">
+                        </section>
+                        <section class="rightcol">
+                            <div class="linebox">Product name</div>
+                            <div class="linebox">Color</div>
+                            <div class="linebox smallbox">256/512?</div>
+                            <div class="linebox">address</div>
+                            <div class="bottomactions">
+                                <div class="linebox smallbox">Price</div>
+                                <div class="actionlinks">
+                                    <a class="learnbtn" href="../Web_SellPhone-feature-HTMLCSS-Detailed_Product_Introduction_Login_registration_Page/IntroPage.html">Learn more</a>
+                                    <a class="buybtn" href="#">Buy</a>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </div>
+        </div>
+        <div class="Footer">
+            <div class="footerServe">
+                <a href="#">Terms of Service</a>
+                <div style="height: 100%; border-left: 1px solid rgb(109, 109, 109);"></div>
+                <a href="#">Privacy Policy</a>
+                <div style="height: 100%; border-left: 1px solid rgb(109, 109, 109);"></div>
+                <a href="#">Contact Us</a>
+            </div>
+            <p class="footertext">© 2026 DragonGod Phone. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
