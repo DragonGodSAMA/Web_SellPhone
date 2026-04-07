@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoginPage</title>
     <script>
-        username = document.getElementById("username").value;
-        password = document.getElementById("password").value;
-        if(username.length >= 12 || username.length <= 6){
-            alert("Username must be between 6 and 12 characters.");
-        }
+        function checkUNPWlen(){
+            username = document.getElementById("un").value;
+            password = document.getElementById("pw").value;
+            if(username.length >= 12 || username.length <= 6){
+                alert("Username must be between 6 and 12 characters.");
+            }
 
-        if(password.length <= 6){
-            alert("Password must be more than 6 characters.");
-        }
-        else{
-            alert("Login successful!");
+            if(password.length <= 6){
+                alert("Password must be more than 6 characters.");
+            }
+            else{
+                alert("Login successful!");
+            }
         }
     </script>
  
@@ -213,10 +215,10 @@
                     <div style="height: 100%; border-left: 1px solid rgb(109, 109, 109);"></div>
 
                     <div class="pwd-box">
-                        <input type="text" id="username" placeholder="Username">
-                        <input type="password" id="password" placeholder="Password">
+                        <input type="text" id="un" placeholder="Username">
+                        <input type="password" id="pw" placeholder="Password">
                         <a href="#" style="margin-right: auto;">Click here to use SMS Verification Code Login</a> 
-                        <button>Login</button>
+                        <button onclick="checkUNPWlen()">Login</button>
                         <div class="Resister-Box">
                             <a href="#">Forgot Password</a>
                             <div style="height: 15px; border-left: 1px solid rgb(109, 109, 109, 0.5);margin-top: 10px;"></div>
